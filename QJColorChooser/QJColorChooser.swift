@@ -39,33 +39,33 @@ import Cocoa
     @IBOutlet weak var delegate: QJColorButtonDelegate?
     
     /// The border radius of the button.
-    @IBInspectable var borderRadius: CGFloat = 4.0 { didSet(value) { layer?.cornerRadius = value } }
+    @IBInspectable open var borderRadius: CGFloat = 4.0 { didSet(value) { layer?.cornerRadius = value } }
     /// The border color of the button.
-    @IBInspectable var borderColor: CGColor = NSColor.lightGray.cgColor { didSet(value) { layer?.borderColor = value } }
+    @IBInspectable open var borderColor: CGColor = NSColor.lightGray.cgColor { didSet(value) { layer?.borderColor = value } }
     /// The border width of the button.
-    @IBInspectable var borderWidth: CGFloat = 0.5 { didSet(value) { layer?.borderWidth = value } }
+    @IBInspectable open var borderWidth: CGFloat = 0.5 { didSet(value) { layer?.borderWidth = value } }
     
     /// True if the button allows the user to pick a custom color.
-    @IBInspectable var usesCustomColor: Bool = true { didSet(value) { configure() } }
+    @IBInspectable open var usesCustomColor: Bool = true { didSet(value) { configure() } }
     /// True if the user is allowed to pick a default color.
-    @IBInspectable var usesDefaultColor: Bool = true { didSet(value) { configure() } }
+    @IBInspectable open var usesDefaultColor: Bool = true { didSet(value) { configure() } }
     /// True if the user is allowed to pick the transparency/alpha value of a custom color.
     /// Only applies if usesCustomColors = true.
-    @IBInspectable var usesAlphaChannel: Bool = false { didSet(value) { colorPanel.showsAlpha = value } }
+    @IBInspectable open var usesAlphaChannel: Bool = false { didSet(value) { colorPanel.showsAlpha = value } }
     
     /// The title of the default color menu option, if usesDefaultColor is true.
-    @IBInspectable var defaultColorTitle: NSString = "Default Color" { didSet(value) { refreshPopover() } }
+    @IBInspectable open var defaultColorTitle: NSString = "Default Color" { didSet(value) { refreshPopover() } }
     /// The title of the custom color menu option, if usesCustomColor is true.
-    @IBInspectable var customColorTitle: NSString = "Custom Color" { didSet(value) { refreshPopover() } }
+    @IBInspectable open var customColorTitle: NSString = "Custom Color" { didSet(value) { refreshPopover() } }
     
     /// The default color the user is allowed to choose.
-    @IBInspectable var defaultColor: NSColor = NSColor.black { didSet(value) { refreshPopover() } }
+    @IBInspectable open var defaultColor: NSColor = NSColor.black { didSet(value) { refreshPopover() } }
     /// The custom color that the user picks.
-    @IBInspectable var customColor: NSColor = NSColor.magenta { didSet(value) { refreshPopover() } }
+    @IBInspectable open var customColor: NSColor = NSColor.magenta { didSet(value) { refreshPopover() } }
     /// The background color of the button.
     /// If you need to set this back to the default, use
     /// colorButton.backgroundColor b= JEColorButton.defaultBackgroundColor
-    @IBInspectable var color: NSColor = QJColorChooser.defaultBackgroundColor {
+    @IBInspectable open var color: NSColor = QJColorChooser.defaultBackgroundColor {
         willSet(value) {
             layer?.backgroundColor = value.cgColor
             if !colorReferenced(value) {
@@ -80,38 +80,38 @@ import Cocoa
     }
     
     /// The background color of the popover, if any.
-    @IBInspectable var popoverBackgroundColor: NSColor? { didSet(value) { refreshPopover() } }
+    @IBInspectable open var popoverBackgroundColor: NSColor? { didSet(value) { refreshPopover() } }
     /// The left and right margin distance between the grid of colors and the popover window.
-    @IBInspectable var horizontalMargin: CGFloat = 4.0 { didSet(value) { configure() } }
+    @IBInspectable open var horizontalMargin: CGFloat = 4.0 { didSet(value) { configure() } }
     /// The top and bottom margin distance between the grid of colors and the popover window.
-    @IBInspectable var verticalMargin: CGFloat = 4.0 { didSet(value) { configure() } }
+    @IBInspectable open var verticalMargin: CGFloat = 4.0 { didSet(value) { configure() } }
     /// The horizontal spacing between colors in the grid.
-    @IBInspectable var horizontalBoxSpacing: CGFloat = 4.0 { didSet(value) { configure() } }
+    @IBInspectable open var horizontalBoxSpacing: CGFloat = 4.0 { didSet(value) { configure() } }
     /// The vertical spacing between colors in the grid.
-    @IBInspectable var verticalBoxSpacing: CGFloat = 4.0 { didSet(value) { configure() } }
+    @IBInspectable open var verticalBoxSpacing: CGFloat = 4.0 { didSet(value) { configure() } }
     /// The width of the color boxes, in points:
-    @IBInspectable var boxWidth: CGFloat = 20.0 { didSet(value) { configure() } }
+    @IBInspectable open var boxWidth: CGFloat = 20.0 { didSet(value) { configure() } }
     /// The height of the color boxes, in points:
-    @IBInspectable var boxHeight: CGFloat = 20.0 { didSet(value) { configure() } }
+    @IBInspectable open var boxHeight: CGFloat = 20.0 { didSet(value) { configure() } }
     /// The color of the currently selected color box (defaults to the user's selection color).
     @IBInspectable open var selectedBoxColor: NSColor = NSColor.selectedMenuItemColor { didSet(value) { refreshPopover() } }
     /// The border/stroke width of the color boxes
-    @IBInspectable var boxBorderWidth: CGFloat = 1.0 { didSet(value) { refreshPopover() } }
+    @IBInspectable open var boxBorderWidth: CGFloat = 1.0 { didSet(value) { refreshPopover() } }
     /// The border/stroke width of the of the selected color box:
-    @IBInspectable var selectedBoxBorderWidth: CGFloat = 4.0 { didSet(value) { refreshPopover() } }
+    @IBInspectable open var selectedBoxBorderWidth: CGFloat = 4.0 { didSet(value) { refreshPopover() } }
     /// The border color of the color boxes
-    @IBInspectable var boxBorderColor: NSColor = NSColor.lightGray { didSet(value) { refreshPopover() } }
+    @IBInspectable open var boxBorderColor: NSColor = NSColor.lightGray { didSet(value) { refreshPopover() } }
     /// The selection color of menu items
-    @IBInspectable var selectedMenuItemColor: NSColor = NSColor.selectedMenuItemColor { didSet(value) { refreshPopover() } }
+    @IBInspectable open var selectedMenuItemColor: NSColor = NSColor.selectedMenuItemColor { didSet(value) { refreshPopover() } }
     /// The color of selected text in a menu item
-    @IBInspectable var selectedMenuItemTextColor: NSColor = NSColor.selectedMenuItemTextColor { didSet(value) { refreshPopover() } }
+    @IBInspectable open var selectedMenuItemTextColor: NSColor = NSColor.selectedMenuItemTextColor { didSet(value) { refreshPopover() } }
     // The color of normal text in the menu items:
-    @IBInspectable var textColor: NSColor = NSColor.textColor { didSet(value) { refreshPopover() } }
+    @IBInspectable open var textColor: NSColor = NSColor.textColor { didSet(value) { refreshPopover() } }
     /// Whether or not the popover is displayed in dark mode.
-    @IBInspectable var darkMode: Bool = false { didSet(value) { configure() } }
+    @IBInspectable open var darkMode: Bool = false { didSet(value) { configure() } }
     
     /// The image that the button draws inside the rectangle, if any.
-    @IBInspectable var image: NSImage? {
+    @IBInspectable open var image: NSImage? {
         set(value) {
             icon = value
             updateImage()
@@ -122,15 +122,15 @@ import Cocoa
     }
     
     /// Whether or not the image is rendered as a template color specified by imageColor.
-    @IBInspectable var imageIsTemplate: Bool = false { didSet(value) { updateImage() } }
+    @IBInspectable open var imageIsTemplate: Bool = false { didSet(value) { updateImage() } }
     /// The color of the image when it is on a dark background
-    @IBInspectable var imageLightColor: NSColor = NSColor.white { didSet(value) { updateImage() } }
+    @IBInspectable open var imageLightColor: NSColor = NSColor.white { didSet(value) { updateImage() } }
     /// The color of hte image when it is on a light or transparent background
-    @IBInspectable var imageNormalColor: NSColor = NSColor.controlDarkShadowColor { didSet(value) { updateImage() } }
+    @IBInspectable open var imageNormalColor: NSColor = NSColor.controlDarkShadowColor { didSet(value) { updateImage() } }
     /// Vertical padding of the image in points
-    @IBInspectable var imageVerticalPadding: CGFloat = 2.0 { didSet(value) { layer?.setNeedsDisplay() } }
+    @IBInspectable open var imageVerticalPadding: CGFloat = 2.0 { didSet(value) { layer?.setNeedsDisplay() } }
     /// Horizontal padding of the image in points
-    @IBInspectable var imageHorizontalPadding: CGFloat = 2.0 { didSet(value) { layer?.setNeedsDisplay() } }
+    @IBInspectable open var imageHorizontalPadding: CGFloat = 2.0 { didSet(value) { layer?.setNeedsDisplay() } }
     
     /// A two-dimensional array of colors to show in the pop-over view.
     /// Think of it as colors[row][column].
