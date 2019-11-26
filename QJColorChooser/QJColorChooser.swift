@@ -94,7 +94,7 @@ import Cocoa
     /// The height of the color boxes, in points:
     @IBInspectable var boxHeight: CGFloat = 20.0 { didSet(value) { configure() } }
     /// The color of the currently selected color box (defaults to the user's selection color).
-    @IBInspectable var selectedBoxColor: NSColor = NSColor.selectedMenuItemColor { didSet(value) { refreshPopover() } }
+    @IBInspectable open var selectedBoxColor: NSColor = NSColor.selectedMenuItemColor { didSet(value) { refreshPopover() } }
     /// The border/stroke width of the color boxes
     @IBInspectable var boxBorderWidth: CGFloat = 1.0 { didSet(value) { refreshPopover() } }
     /// The border/stroke width of the of the selected color box:
