@@ -11,7 +11,7 @@ import Cocoa
 
 /// An NSButton subclass that allows the user to pick a color from a list
 /// of colors in a popover. This button is highly configurable.
-@objc @IBDesignable open class QJColorChooser: NSView, QJColorGridViewDelegate, NSAccessibilityButton, CALayerDelegate {
+@objc @IBDesignable public class QJColorChooser: NSView, QJColorGridViewDelegate, NSAccessibilityButton, CALayerDelegate {
     
     // MARK: Static Properties
     

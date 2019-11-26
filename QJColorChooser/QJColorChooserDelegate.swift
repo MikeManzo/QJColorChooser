@@ -8,6 +8,6 @@
 
 import Cocoa
 
-@objc protocol QJColorButtonDelegate {
+@objc public protocol QJColorButtonDelegate {
   func colorSelected(_ sender: QJColorChooser, color: NSColor)
 }
