@@ -36,7 +36,7 @@ import Cocoa
     
     /// The controller that handles this controls' actions (such as click event).
     /// You can hook this up in interface builder if you like.
-    @IBOutlet weak var delegate: QJColorButtonDelegate?
+    @IBOutlet weak open var delegate: QJColorButtonDelegate?
     
     /// The border radius of the button.
     @IBInspectable open var borderRadius: CGFloat = 4.0 { didSet(value) { layer?.cornerRadius = value } }
