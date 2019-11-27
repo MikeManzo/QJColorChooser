@@ -6,7 +6,9 @@
 //  Updated for swift 5.1 and enhanced by Mike Manzo: '19
 //
 
+#if !targetEnvironment(macCatalyst)
 import Cocoa
+#endif
 
 extension NSColor {
   
